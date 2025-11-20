@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto por WhatsApp — Martín González</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header style="position:relative;padding:1rem 5%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:space-between;">
+    <a class="logo" href="index.html" style="color:var(--primary-color);font-family:var(--font-serif);font-weight:700;text-decoration:none;">Martín González</a>
+    <a href="index.html" class="btn-primary" style="background:#264653;padding:0.5rem 0.9rem;color:#fff;border-radius:8px;text-decoration:none;">Volver al sitio</a>
+  </header>
+
+  <main style="padding-top:4.5rem;">
+    <section class="section-title">
+      <h2>Contacto rápido por WhatsApp</h2>
+      <p style="max-width:700px;margin:0.5rem auto;color:#555;">Envíale un mensaje directo a Martín por WhatsApp. Puedes elegir una opción rápida, escribir tu propio texto y añadir tu ubicación.</p>
+    </section>
+
+    <section>
+      <div style="max-width:700px;margin:0.5rem auto;text-align:center;">
+        <a href="index.html" style="font-size:0.95rem;color:var(--primary-color);">← Volver a inicio</a>
+      </div>
+      <div class="contact-form" style="max-width:700px;margin:0 auto;">
+        <div class="form-group">
+          <label for="name">Tu nombre (opcional)</label>
+          <input id="name" placeholder="Ej. Ana Pérez">
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Selecciona una opción</label>
+          <select id="topic">
+            <option value="Consulta general">Consulta general</option>
+            <option value="Pedido / Compra">Pedido / Compra</option>
+            <option value="Precios y disponibilidad">Precios y disponibilidad</option>
+            <option value="Distribución / Negocios">Distribución / Negocios</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tu mensaje</label>
+          <textarea id="message" placeholder="Escribe aquí tu mensaje..."></textarea>
+        </div>
+
+        <div class="form-group" style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+          <button id="btnLocation" class="btn-primary" type="button">Obtener mi ubicación</button>
+          <span id="locationStatus" style="font-size:0.95rem;color:#666;">No hay ubicación</span>
+        </div>
+
+        <input type="hidden" id="loc_lat" value="">
+        <input type="hidden" id="loc_lon" value="">
+
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;">
+          <button id="sendWhatsApp" class="btn-primary" style="background:#25D366;">Enviar por WhatsApp</button>
+          <a href="https://wa.me/5492664548327" target="_blank" class="btn-primary" style="background:#075E54;">Abrir chat (WhatsApp)</a>
+        </div>
+
+        <p style="margin-top:1rem;font-size:0.9rem;color:#777;">Número destino: <strong>Martín González — +54 9 2664 548327</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // La página usa funciones definidas en script.js; aquí enganchamos eventos
+    document.getElementById('btnLocation').addEventListener('click', function(){
+      if (window.requestLocation) window.requestLocation();
+    });
+    document.getElementById('sendWhatsApp').addEventListener('click', function(e){
+      e.preventDefault();
+      if (window.sendWhatsAppFromForm) window.sendWhatsAppFromForm();
+    });
+  </script>
+</body>
+</html>
