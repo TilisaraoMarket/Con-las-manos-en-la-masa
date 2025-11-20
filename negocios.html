@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negocios | Con las manos en la masa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Con las manos en la masa</div>
+            <div class="hamburger">☰</div>
+            <div class="nav-links">
+                <a href="index.html">Volver al Inicio</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#contacto-b2b" class="btn-primary">Contactar</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero hero-b2b">
+        <div class="hero-content">
+            <h1>Crecé con Nosotros</h1>
+            <p>Sumá productos de calidad artesanal a tu negocio y deleitá a tus clientes.</p>
+            <a href="#contacto-b2b" class="btn-primary">Quiero ser Distribuidor</a>
+        </div>
+    </section>
+
+    <section id="beneficios">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-hand-holding-heart benefit-icon"></i>
+                <h3>Calidad Artesanal</h3>
+                <p>Productos hechos a mano que se diferencian de la competencia industrial.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-truck benefit-icon"></i>
+                <h3>Logística Eficiente</h3>
+                <p>Entregas programadas para que nunca te falte mercadería fresca.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-percentage benefit-icon"></i>
+                <h3>Rentabilidad</h3>
+                <p>Márgenes competitivos pensados para que tu negocio crezca.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto-b2b">
+        <h2 class="section-title">Trabajemos Juntos</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="nombre">Nombre del Negocio / Contacto</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Negocio</label>
+                <select id="tipo">
+                    <option value="restaurante">Restaurante</option>
+                    <option value="almacen">Almacén / Mercado</option>
+                    <option value="distribuidor">Distribuidor Independiente</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje (Volumen estimado, zona, dudas)</label>
+                <textarea id="mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitud</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Con las manos en la masa. Sección Negocios.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
