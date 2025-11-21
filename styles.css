@@ -62,6 +62,16 @@ nav {
     font-weight: bold;
     color: var(--primary-color);
     font-family: var(--font-serif);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 1002; /* Ensure logo stays above if needed */
+}
+
+.logo span {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -271,9 +281,9 @@ footer {
     gap: 0.75rem;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* avoid wrapping buttons to next line */
-    overflow-x: auto; /* allow horizontal scroll if too narrow */
+    flex-wrap: wrap; /* Allow wrapping */
     padding: 0.25rem 0;
+    width: 100%;
 }
 .b2b-actions a {
     flex: 0 0 auto;
@@ -308,7 +318,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
-        position: absolute;
+        position: fixed; /* Changed from absolute to fixed for better mobile behavior */
         right: 0;
         height: 100vh;
         top: 0;
@@ -316,9 +326,12 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 50%;
+        width: 70%; /* Increased width for better touch targets */
+        max-width: 300px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1); /* Add shadow for depth */
+        z-index: 1000;
     }
 
     .nav-links.active {
@@ -338,7 +351,41 @@ footer {
 @media (max-width: 420px) {
     /* Ensure the header logo and return button don't break layout */
     header { padding: 0.6rem 3%; }
-    .site-logo { width:56px; height:56px; }
+    .site-logo { width:40px; height:40px; } /* Smaller logo image */
+    .logo span { font-size: 1rem; } /* Smaller text */
+    
+    .b2b-actions {
+        flex-direction: column; /* Stack buttons */
+    }
+    .b2b-actions a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Landscape Mode Fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        padding: 0.3rem 3%;
+    }
+    .site-logo {
+        width: 35px;
+        height: 35px;
+    }
+    .logo span {
+        font-size: 0.9rem;
+    }
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px; /* Space for fixed header */
+    }
+    .nav-links {
+        padding-top: 4rem;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
 }
 
 /* Estilos específicos para la mini página de contacto */
