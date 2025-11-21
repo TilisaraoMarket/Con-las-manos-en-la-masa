@@ -47,6 +47,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     });
+
+    // Copy APK link button (index.html)
+    const copyApkBtn = document.getElementById('copyApkLink');
+    if (copyApkBtn) {
+        copyApkBtn.addEventListener('click', () => {
+            const apkLink = 'https://www.mediafire.com/file/js2zgyqk15wsx6b/Con_las_manos_en_la_masa.apk/file';
+            // Use Clipboard API when available
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(apkLink).then(() => {
+                    const status = document.getElementById('copyStatus');
+                    if (status) status.textContent = 'Enlace copiado al portapapeles.';
+                }).catch(() => {
+                    fallbackCopy(apkLink);
+                });
+            } else {
+                fallbackCopy(apkLink);
+            }
+        });
+    }
+
+    function fallbackCopy(text) {
+        const input = document.createElement('textarea');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        try {
+            document.execCommand('copy');
+            const status = document.getElementById('copyStatus');
+            if (status) status.textContent = 'Enlace copiado al portapapeles.';
+        } catch (err) {
+            const status = document.getElementById('copyStatus');
+            if (status) status.textContent = 'No se pudo copiar automáticamente. Copiá y pegá este enlace: ' + text;
+        }
+        document.body.removeChild(input);
+    }
 });
 
 // --- Funciones de contacto / WhatsApp ---
