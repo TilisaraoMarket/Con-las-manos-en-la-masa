@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #E63946; /* Tomato Red */
-    --secondary-color: #F4A261; /* Egg Yolk Yellow */
-    --accent-color: #2A9D8F; /* Herb Green */
-    --text-color: #264653; /* Dark Blue/Grey */
-    --bg-color: #FDFCDC; /* Flour White/Cream */
+    --primary-color: #2B241E; /* Tomato Red */
+    --secondary-color: #C89C3C; /* Egg Yolk Yellow */
+    --accent-color: #E0B45B; /* Herb Green */
+    --text-color: #1E1914; /* Dark Blue/Grey */
+    --bg-color: #F6EEDF; /* Flour White/Cream */
     --white: #FFFFFF;
     --font-main: 'Inter', sans-serif;
     --font-serif: 'Playfair Display', serif;
@@ -83,7 +83,7 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: #d62828;
+    background-color: #1E1712;
     transform: translateY(-2px);
 }
 
@@ -256,6 +256,30 @@ footer {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
+/* Logo image */
+.site-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+/* B2B actions: keep buttons together on small screens */
+.b2b-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* avoid wrapping buttons to next line */
+    overflow-x: auto; /* allow horizontal scroll if too narrow */
+    padding: 0.25rem 0;
+}
+.b2b-actions a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -309,6 +333,12 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+}
+
+@media (max-width: 420px) {
+    /* Ensure the header logo and return button don't break layout */
+    header { padding: 0.6rem 3%; }
+    .site-logo { width:56px; height:56px; }
 }
 
 /* Estilos específicos para la mini página de contacto */
