@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Con las manos en la masa | Pastas Caseras</title>
-    <meta name="description"
-        content="Pastas caseras hechas con amor y tradición. Ravioles, fideos y más, directo a tu mesa.">
+    <meta name="description" content="Pastas caseras hechas con amor y tradición. Ravioles, fideos y más, directo a tu mesa.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Note: This might need a real key or use a generic CDN for icons if this fails, but I'll use text/unicode fallbacks if needed or a public CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Note: This might need a real key or use a generic CDN for icons if this fails, but I'll use text/unicode fallbacks if needed or a public CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
     <header>
         <nav>
-            <a href="index.html" class="logo">
-                <img src="logo-circular.png" alt="Logo" class="site-logo" onerror="this.src='logo-circular.svg'">
-                <span>Con las manos en la masa</span>
-            </a>
+            <div class="logo">Con las manos en la masa</div>
             <div class="hamburger">☰</div>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
@@ -49,9 +40,7 @@
     <section id="nosotros">
         <h2 class="section-title">Nuestra Historia</h2>
         <div class="about-content">
-            <p>En "Con las manos en la masa", creemos que la verdadera pasta nace de la dedicación. Amasamos cada fideo
-                y cerramos cada raviol con el cuidado que nuestras abuelas nos enseñaron. Sin conservantes, solo harina,
-                huevo y pasión.</p>
+            <p>En "Con las manos en la masa", creemos que la verdadera pasta nace de la dedicación. Amasamos cada fideo y cerramos cada raviol con el cuidado que nuestras abuelas nos enseñaron. Sin conservantes, solo harina, huevo y pasión.</p>
         </div>
     </section>
 
@@ -59,100 +48,53 @@
         <h2 class="section-title">Nuestros Favoritos</h2>
         <div class="products-grid">
             <div class="product-card">
-                <img src="ravioles.png" alt="Ravioles Caseros">
+                <img src="product_ravioli.png" alt="Ravioles Caseros">
                 <div class="product-info">
-                    <h3>Ravioles Caseros</h3>
-                    <p>Ravioles de Ricota y Nuez - Suaves y cremosos, con un toque crocante.</p>
+                    <h3>Ravioles de Ricota y Nuez</h3>
+                    <p>Suaves y cremosos, con un toque crocante.</p>
                     <span class="price">$4500 / kg</span>
                 </div>
             </div>
             <div class="product-card">
-                <img src="tallarines.png" alt="Tallarines">
+                <img src="product_fettuccine.png" alt="Fettuccine al Huevo">
                 <div class="product-info">
-                    <h3>Tallarines</h3>
-                    <p>Fideos finos y delicados, perfectos para cualquier salsa.</p>
+                    <h3>Fettuccine al Huevo</h3>
+                    <p>La cinta perfecta para tu salsa favorita.</p>
                     <span class="price">$3200 / kg</span>
                 </div>
             </div>
             <div class="product-card">
-                <img src="sorrentinos.png" alt="Sorrentinos">
+                <!-- Placeholder for variety, reusing image or just text if no 3rd image -->
+                <img src="product_ravioli.png" alt="Sorrentinos" style="filter: hue-rotate(45deg);"> 
                 <div class="product-info">
-                    <h3>Sorrentinos</h3>
-                    <p>Sorrentinos de Jamón y Queso - El clásico que nunca falla, rellenos hasta el borde.</p>
+                    <h3>Sorrentinos de Jamón y Queso</h3>
+                    <p>El clásico que nunca falla, rellenos hasta el borde.</p>
                     <span class="price">$4800 / kg</span>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="noquis.png" alt="Ñoquis">
-                <div class="product-info">
-                    <h3>Ñoquis</h3>
-                    <p>Ñoquis de papa caseros, esponjosos y deliciosos.</p>
-                    <span class="price">$3800 / kg</span>
-                </div>
-            </div>
         </div>
-        <p style="text-align:center;margin-top:1.25rem;color:#555;max-width:900px;margin-left:auto;margin-right:auto;">
-            Fabricamos: <strong>ravioles</strong>, <strong>tallarines</strong>, <strong>sorrentinos</strong> y
-            <strong>ñoquis</strong>, siguiendo recetas tradicionales.</p>
     </section>
 
     <section class="b2b-teaser">
         <h2>¿Tenés un negocio?</h2>
         <p>Llevá nuestras pastas a tu local. Ofrecemos precios especiales para distribuidores y restaurantes.</p>
         <br>
-        <div class="b2b-actions">
-            <a href="negocios.html" class="btn-primary"
-                style="background-color: var(--white); color: var(--primary-color);">Sumate a la red</a>
-            <a href="contacto.html" class="btn-primary" style="background:#25D366;">Contactar por WhatsApp</a>
-        </div>
-    </section>
-
-    <section class="app-download" style="padding:2rem 5%;">
-        <h2 class="section-title">Descargá nuestra app</h2>
-        <p style="text-align:center;max-width:800px;margin:0.5rem auto;color:#555;">Instalá la APK para hacer pedidos
-            más rápido desde tu teléfono. Si no podés compartir la web, podés copiar el link de descarga y enviarlo por
-            mensaje.</p>
-        <div style="text-align:center;margin-top:1rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-            <a href="https://www.mediafire.com/file/js2zgyqk15wsx6b/Con_las_manos_en_la_masa.apk/file" target="_blank"
-                rel="noopener noreferrer" class="btn-primary" style="background:#2b7aef;">Descargar la app (APK)</a>
-            <button id="copyApkLink" class="btn-primary" style="background:#555;">Copiar link de descarga</button>
-        </div>
-        <p id="copyStatus" style="text-align:center;margin-top:0.6rem;color:#666;font-size:0.95rem;"></p>
-    </section>
-
-    <section id="instagram-feed" style="padding:3rem 5%;background:#f8f9fa;text-align:center;">
-        <h2 class="section-title">Síguenos en Instagram</h2>
-        <p style="max-width:800px;margin:0 auto 1.5rem;color:#555;">Mirá nuestras últimas publicaciones y enterate de
-            ofertas, nuevos productos y eventos.</p>
-        <div
-            style="max-width:600px;margin:0 auto;overflow:hidden;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-            <iframe src="https://www.instagram.com/tinchoshuman?igsh=MnVnamdoMm95bmU5/embed" width="100%" height="600"
-                frameborder="0" scrolling="no" allowtransparency="true" style="max-width:100%;"></iframe>
-        </div>
-        <p style="margin-top:1.5rem;font-size:0.95rem;color:#777;">
-            <a href="https://www.instagram.com/tinchoshuman?igsh=MnVnamdoMm95bmU5" target="_blank"
-                rel="noopener noreferrer" style="color:var(--primary-color);font-weight:600;">Ver más en Instagram →</a>
-        </p>
+        <a href="negocios.html" class="btn-primary" style="background-color: var(--white); color: var(--primary-color);">Sumate a la red</a>
+        <a href="contacto.html" class="btn-primary" style="background:#25D366;margin-left:0.75rem;">Contactar por WhatsApp</a>
     </section>
 
     <footer id="contacto">
         <div class="social-links">
-            <a href="https://www.instagram.com/tinchoshuman?igsh=MnVnamdoMm95bmU5" target="_blank"
-                rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/PASTASCASERAS1474" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/5492665108943" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p>📍 Calle Cleofe Domínguez, Ciudad de Tilisarao</p>
-        <a href="https://www.google.com/maps?q=-32.730335,-65.291708" target="_blank" rel="noopener noreferrer">Ver en
-            Google Maps</a></p>
-        <p>Pedidos al: <strong>📲 2665 108943</strong></p>
+        <p>📍 Calle Falsa 123, Ciudad</p>
+        <p>📞 +54 11 1234-5678</p>
         <br>
-        <p>&copy; 2025 Con las manos en la masa. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Con las manos en la masa. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
