@@ -1,17 +1,12 @@
 :root {
-    --primary-color: #E63946; /* Tomato Red */
-    --secondary-color: #F4A261; /* Egg Yolk Yellow */
-    --accent-color: #2A9D8F; /* Herb Green */
-    --text-color: #264653; /* Dark Blue/Grey */
-    --bg-color: #FDFCDC; /* Flour White/Cream */
+    --primary-color: #2B241E; /* Tomato Red */
+    --secondary-color: #C89C3C; /* Egg Yolk Yellow */
+    --accent-color: #E0B45B; /* Herb Green */
+    --text-color: #1E1914; /* Dark Blue/Grey */
+    --bg-color: #F6EEDF; /* Flour White/Cream */
     --white: #FFFFFF;
     --font-main: 'Inter', sans-serif;
     --font-serif: 'Playfair Display', serif;
-}
-
-html {
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 * {
@@ -67,6 +62,16 @@ nav {
     font-weight: bold;
     color: var(--primary-color);
     font-family: var(--font-serif);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 1002; /* Ensure logo stays above if needed */
+}
+
+.logo span {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -88,7 +93,7 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: #d62828;
+    background-color: #1E1712;
     transform: translateY(-2px);
 }
 
@@ -109,7 +114,7 @@ nav {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding: 6rem 1rem 1rem;
+    padding: 0 1rem;
 }
 
 .hero-content h1 {
@@ -228,8 +233,9 @@ footer {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('b2b_hero.png');
     background-size: cover;
     background-position: center;
-    height: 60vh;
-    padding-top: 6rem;
+    /* Deja espacio para el header fijo y asegura buena visibilidad del título en todas las vistas */
+    padding-top: 90px;
+    min-height: calc(100vh - 90px);
 }
 
 .benefits-grid {
@@ -262,6 +268,30 @@ footer {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
+/* Logo image */
+.site-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+/* B2B actions: keep buttons together on small screens */
+.b2b-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    padding: 0.25rem 0;
+    width: 100%;
+}
+.b2b-actions a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -290,7 +320,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
-        position: absolute;
+        position: fixed; /* Changed from absolute to fixed for better mobile behavior */
         right: 0;
         height: 100vh;
         top: 0;
@@ -298,9 +328,12 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 50%;
+        width: 70%; /* Increased width for better touch targets */
+        max-width: 300px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1); /* Add shadow for depth */
+        z-index: 1000;
     }
 
     .nav-links.active {
@@ -314,6 +347,55 @@ footer {
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    /* Asegurar que el hero no quede tapado por el header en móvil */
+    .hero,
+    .hero-b2b {
+        padding-top: 100px;
+        min-height: calc(100vh - 100px);
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 420px) {
+    /* Ensure the header logo and return button don't break layout */
+    header { padding: 0.6rem 3%; }
+    .site-logo { width:40px; height:40px; } /* Smaller logo image */
+    .logo span { font-size: 1rem; } /* Smaller text */
+    
+    .b2b-actions {
+        flex-direction: column; /* Stack buttons */
+    }
+    .b2b-actions a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Landscape Mode Fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        padding: 0.3rem 3%;
+    }
+    .site-logo {
+        width: 35px;
+        height: 35px;
+    }
+    .logo span {
+        font-size: 0.9rem;
+    }
+    .hero,
+    .hero-b2b {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px; /* Space for fixed header */
+    }
+    .nav-links {
+        padding-top: 4rem;
+        justify-content: flex-start;
+        overflow-y: auto;
     }
 }
 
@@ -351,13 +433,15 @@ footer {
 @media (max-width: 600px) {
     .contact-form { padding: 1rem; }
     #locationStatus { font-size: 0.85rem; }
-    section { padding: 3rem 1.5rem; }
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+
+    /* Ajustar tipografía de secciones para mejor lectura en la app */
+    .section-title h2 {
+        font-size: 1.6rem;
     }
-    section.section-title p {
-        font-size: 0.95rem;
+
+    .section-title p {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
     }
 }
 
